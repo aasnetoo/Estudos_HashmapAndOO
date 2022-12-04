@@ -43,32 +43,16 @@ public class SortPalavra {
         }
         String res = sb.toString();
         System.out.println(res);
-
-
-
-
-
-
-
+        
     }
 
     public static <Palavra> ArrayList<Palavra> removeDuplicates(ArrayList<Palavra> list )
     {
 
-        // Create a new LinkedHashSet
         Set<Palavra> set = new LinkedHashSet<>();
-
-        // Add the elements to set
         set.addAll(list);
-
-        // Clear the list
         list.clear();
-
-        // add the elements of set
-        // with no duplicates to the list
         list.addAll(set);
-
-        // return the list
         return list;
     }
 }
