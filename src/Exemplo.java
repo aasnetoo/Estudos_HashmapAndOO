@@ -10,7 +10,7 @@ public class Exemplo {
         for (Character c: s.toCharArray()) {
             b.put(c,b.getOrDefault(c,0)+1);
         }
-        List<Map.Entry<Character, Integer>> list = new ArrayList<>(b.entrySet());
+        List<Map.Entry<Character, Integer>> list = new ArrayList<>(b.entrySet()); //entrySet = lista do Hashmap
         list.sort(Collections.reverseOrder(Map.Entry.comparingByValue()));
         List<String> teste1 = new ArrayList<>();
         list.forEach((c)->
@@ -27,7 +27,7 @@ public class Exemplo {
         System.out.println(res);
 
 
-        
+
 
     }
 
