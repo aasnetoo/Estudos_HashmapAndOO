@@ -5,8 +5,6 @@ import java.util.stream.Collectors;
 public class SortPalavra {
 
     public static void main(String[] args) {
-        Palavra palavra = new Palavra();
-
         Scanner scan = new Scanner(System.in);
         System.out.println(" ");
         String s = scan.nextLine();
@@ -15,10 +13,6 @@ public class SortPalavra {
         for (Character c: s.toCharArray()) {
             b.add(String.valueOf(c));
         }
-        System.out.println(b);
-
-        int z = 0;
-
         for (int i = 0; i < b.size(); i++) {
             int j = 0;
             String l = "";
@@ -28,44 +22,22 @@ public class SortPalavra {
                     j++;
                     l = letra;
                 }
-
             }
-
             Palavra pala = new Palavra();
             pala.setLetra(l);
             pala.setId(j);
             palavras.add(pala);
             }
 
-//            for (Palavra p : palavras ) {
-//                if (!p.getLetra().equals(l) || z==0){
-//                    Palavra pala = new Palavra();
-//                    pala.setLetra(l);
-//                    pala.setId(j);
-//                    palavras.add(pala);
-//                }
-//            }
-            z++;
+        removeDuplicates(palavras);
 
-        //}
-
-      //  removeDuplicates(palavras);
-
-        List<Palavra> newList = palavras.stream()
-                .distinct()
-                .collect(Collectors.toList());
-        System.out.println(newList);
-
-
-
-        for (Palavra p:
-             newList) {
-            System.out.println(p.getLetra() + " + " +p.getId());
-
-        }
+//        List<Palavra> newList = palavras.stream()
+//                .distinct()
+//                .collect(Collectors.toList());
+//        System.out.println(newList);
 
         StringBuilder sb = new StringBuilder();
-        for (Palavra value : newList) {
+        for (Palavra value : palavras) {
             sb.append(String.valueOf(value.getLetra()).repeat(Math.max(0, value.getId())));
 
         }
